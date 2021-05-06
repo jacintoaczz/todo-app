@@ -10,10 +10,12 @@ import { Todo } from '../model/todo.model';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  todoList$!: Observable<Todo[]>;
+  todoList!: Todo[];
+  filtroActual$: Observable<string>;
 
   constructor(private _store: Store<AppState>) {
-    this.todoList$ = _store.select('todos');
+    _store.select('todos').subscribe((todos) => (this.todoList = todos));
+    this.filtroActual$ = _store.select('filtro');
   }
 
   ngOnInit(): void {}
