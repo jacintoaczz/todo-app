@@ -16,6 +16,7 @@ import { TodoListComponent } from './features/todos/todo-list/todo-list.componen
 import { TodoItemComponent } from './features/todos/todo-item/todo-item.component';
 import { TodoFooterComponent } from './features/todos/todo-footer/todo-footer.component';
 import { TodoAddComponent } from './features/todos/todo-add/todo-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const components = [
   AppComponent,
@@ -37,6 +38,7 @@ const modules = [BrowserModule, AppRoutingModule, ReactiveFormsModule];
       maxAge: 25,
       logOnly: environment.production,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
