@@ -21,3 +21,6 @@ export const eliminar = createAction(
   '[TODO] Eliminar to-do',
   props<{ todoId: string }>()
 );
+export const eliminarCompletados = createAction(
+  '[TODO] Eliminar to-dos completados'
+);

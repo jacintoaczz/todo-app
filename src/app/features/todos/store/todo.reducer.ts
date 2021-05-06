@@ -6,6 +6,7 @@ import {
   agregar,
   editar,
   eliminar,
+  eliminarCompletados,
 } from './todo.actions';
 
 const todo1 = new Todo('Practicar Angular');
@@ -57,6 +58,9 @@ const _todoReducer = createReducer(
   }),
   on(eliminar, (state, { todoId }) => {
     return state.filter((todoEdit) => todoEdit.id !== todoId);
+  }),
+  on(eliminarCompletados, (state) => {
+    return state.filter((todo) => !todo.completado);
   })
 );
 
